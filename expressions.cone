@@ -1,0 +1,44 @@
+import stdio::*
+
+fn main():
+  print <- -12 + 14, "\n"    // => 2
+  print <-  6 / 5, "\n"      // => 1
+  print <- -4 % 3, "\n"      // => -1 (where -4/3 --> -1, truncating towards zero)
+  print <- 2*2 + 2*3, "\n"   // => 10 (standard algebraic operator precedence)
+  print <- 2 * (4 + 1), "\n" // => 10 (parentheses override operator precedence)
+
+  // Methods:
+  imm pi = 3.14159
+  print <- (pi/2).sin, "\n"  // => 1 (trigonometric sine function)
+ 
+  // Numeric conversions:
+  imm six = i32[6u8]    // Converts 8-bit unsigned integer to 32-bit signed integer
+  print <- six, "\n"    // => 6
+  imm sixf = f64[six]   // Converts 32-bit signed integer to 64-bit floating point number
+  print <- sixf, "\n"    // => 6
+
+  // Swap the variable values for a and b
+  mut a = 6
+  mut b = 7
+  a,b = b,a
+  print <- a, "\n"  // => 7
+  print <- b, "\n"  // => 6
+
+  // Increment:
+  mut cnt = 10
+  print <- ++cnt, "\n"          // => 11
+  print <- --cnt, "\n"          // => 10
+  imm x = cnt++  // x is 10, cnt is 11
+  print <- x, "\n"              // => 10
+  print <- cnt, "\n"            // => 11
+
+  mut counter = 3
+  counter += 1  // 4. Equivalent to: counter = counter + 1
+  print <- counter, "\n"            // => 4
+
+  mut flags = 0xC0u
+  flags |= 0x01u                // 0xC1u
+  print <- flags, "\n"          // => A   
+  
+  
+  

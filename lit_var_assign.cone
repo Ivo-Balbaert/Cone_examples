@@ -1,0 +1,24 @@
+import stdio::*
+
+fn main():
+  print <- 123, "\n"
+  print <- 3.14159, "\n"
+  print <- 1e6, "\n"          // 1000000.0
+  print <- -1_000_000, "\n"   // => -1000000  - underscores are ignored
+  print <- 0x1000, "\n"       // => 4096 - Hexadecimal
+
+  print <- 65u8, "\n"     // => A - 8-bit unsigned integer
+  print <- 1f64, "\n"     // => 1 - 64-bit floating point number
+
+  imm height f32 = 1.86   // f32 is optional, inferred from value
+  print <- height, "\n"   // => 1.86
+  imm width  = height   // its value is 1.86 and type is f32
+  
+  imm height2 f32
+  height2 = 1.86
+  print <- height2  // => 1.86
+
+  mut age = 23      // type is i32
+  // ... some statements here ...
+  age = 24          // alters age to hold 24 instead
+  print <- age, "\n"  // => 24

@@ -1,0 +1,10 @@
+import stdio::*
+
+fn main():
+  print <- "Hello world!\n"
+
+// Version 2:
+// import stdio
+// 
+// fn main():
+//  stdio::print <- "Hello world!"
