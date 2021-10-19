@@ -1,7 +1,7 @@
 import stdio::*
 
 fn main():
-  imm a = 12; imm b = 5    // Equivalent to:  a = 12; b = 5;
+  imm a = 12; imm b = 5
   imm e = 7; imm f = 42
   // continue on a next line with indentation:
   mut c = a + b 
