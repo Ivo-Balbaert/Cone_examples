@@ -1,0 +1,36 @@
+// Variant types and pattern matching
+import stdio::*
+
+trait @samesize Event:
+  _ enum
+  time u32
+
+struct QuitEvent extends Event:
+
+struct MouseEvent extends Event:
+  x i32
+  y i32
+
+struct KeyEvent extends Event:
+  char u8
+
+fn doEvent(ev Event):
+  match ev:
+    imm m MouseEvent:
+      print <- "Mouse event at ", m.x, " ", m.y, "\n"
+    imm k KeyEvent:
+      print <- "Key pressed: ", k.char, "\n"
+    imm q QuitEvent:
+      print <- "All finished!", "\n"
+
+fn main():
+  doEvent(MouseEvent[10u, 100, 200])
+  doEvent(KeyEvent[20u, 'q'])
+  doEvent(MouseEvent[10u, 50, 600])
+  doEvent(QuitEvent[35u])
+
+// =>
+// Mouse event at 100 200
+// Key pressed: q
+// Mouse event at 50 600
+// All finished!

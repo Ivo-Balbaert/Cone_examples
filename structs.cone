@@ -1,0 +1,35 @@
+// Demonstration of structs with methods
+import stdio::*
+
+struct Point:
+  x f32
+  y f32
+  
+  // Calculate length of point
+  // 'fn' inside a type are methods. self is default first parameter.
+  fn len() f32:
+    _lensq().sqrt // _lensq() is equivalent to self._lensq()
+  
+  // Subtract two points
+  // A `-` method implements the binary subtract ('-') operator
+  fn `-`(pt2) Point:
+    Point[pt2.x - x, pt2.y - y]
+
+  // A `()` operator allows an object to be called like a function
+  // This is useful for implementing objects as closures
+  fn `()`() f32:
+    x
+
+  // A private method, as name begins with an underscore
+  fn _lensq() f32:
+    x*x + y*y
+
+fn main():
+  mut pt1 = Point[3.0, 0.0]
+  mut pt2 = Point[0.0, 4.0]
+
+  pt1() // Invoke the `()` method on pt1
+  // pt1._lensq   // Illegal, as _lensq is a private method
+  
+  print <- "Distance is: ", (pt1 - pt2).len, "\n"
+// => Distance is: 5

@@ -1,0 +1,41 @@
+// Demonstration of permissions
+// Remove // to see compile-time errors
+import stdio::*
+
+fn main():
+  imm immvar = 5 // immutable - cannot be changed
+  // immvar = 6 // Error! - Error 1017: You do not have permission to modify lval
+  print <- immvar, "\n" // => 5
+  mut mutvar = 6 // mutable - value may change
+  mutvar = 7
+  print <- mutvar, "\n" // => 7
+
+  // & obtains a reference...
+  print <- immreffn(&imm immvar), "\n" // => 5
+  // immreffn(&imm mutvar) // Error! - Error 1034: Borrowed reference cannot obtain this permission
+    
+  // mutreffn(&mut immvar) // Error! - Error 1034: Borrowed reference cannot obtain this permission
+  print <- mutreffn(&mut mutvar), "\n" // => 8
+  
+  // & default's permission is 'const'
+  // const reference may be obtained from any permission
+  print <- constreffn(&immvar), "\n" // => 5
+  print <- constreffn(&mutvar), "\n" // => 8
+  
+// 'const' references may not change value
+fn constreffn(constref &i32) i32:
+  // *constref = 10 // Error! - Error 1017: You do not have permission to modify lval
+  imm constref2 = constref // shared, const refs to same value
+  *constref2
+
+// 'imm' reference may not change value
+fn immreffn(immref &imm i32) i32:
+  // *immref = 8 // Error! - Error 1017: You do not have permission to modify lval
+  imm immref2 = immref // shared, imm refs to same value
+  *immref2
+
+// 'mut' references may change value
+fn mutreffn(mutref &mut i32) i32:
+  *mutref = 8
+  imm mutref2 = mutref // shared, mutable refs to same value
+  *mutref2

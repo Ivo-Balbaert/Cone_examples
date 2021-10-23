@@ -1,0 +1,14 @@
+import stdio::*
+
+fn main():
+  print <- power(3, 2), "\n" // => 9
+  print <- power(3, 1), "\n" // => 3
+  print <- power(3, 0), "\n" // => 1
+  print <- power(3, 3), "\n" // => -1
+
+fn power(n i32, pow i32) i32:
+  match pow:
+    ==0: 1;
+    ==1: n;
+    ==2: n * n;
+    else: -1
