@@ -1,3 +1,7 @@
+// 2021 Oct 24: doesn't work at the moment
+// conec: /newvolume/cone/conec/src/c-compiler/genllvm/genlexpr.c:330: genlFnCallInternal: Assertion `selftypkind == LLVMIntegerTypeKind' failed.
+//Compilation failed.
+
 // Calculate and print value of pi
 import stdio::*
 

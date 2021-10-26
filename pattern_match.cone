@@ -8,7 +8,8 @@ fn main():
 
 fn power(n i32, pow i32) i32:
   match pow:
-    ==0: 1;
-    ==1: n;
-    ==2: n * n;
+    case ==0: 1
+    case ==1: n
+    case ==2: n * n
     else: -1
+  
