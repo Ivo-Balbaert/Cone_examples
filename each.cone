@@ -1,0 +1,14 @@
+import stdio::*
+
+fn main():
+  mut sum = 0
+  each x in 0 <= 10:
+    sum += x
+  print <- sum, "\n"      // => 55
+  print <- fact(5), "\n"  // => 120
+
+fn fact(n i32) i32:
+  mut result = 1
+  each x in 2 <= n:
+    result *= x
+  result

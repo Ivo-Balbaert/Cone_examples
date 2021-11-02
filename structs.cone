@@ -25,8 +25,8 @@ struct Point:
     x*x + y*y
 
 fn main():
-  mut pt1 = Point[3.0, 0.0]
-  mut pt2 = Point[0.0, 4.0]
+  mut pt1 = Point[3f, 0f]
+  mut pt2 = Point[0f, 4f]
 
   pt1() // Invoke the `()` method on pt1
   // pt1._lensq   // Illegal, as _lensq is a private method

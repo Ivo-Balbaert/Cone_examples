@@ -28,7 +28,8 @@ fn pi(mut nterms = 10) f64:
   mut twos = 2d
   mut term = 0d
   
-  while --nterms:
+  // following loop stops when nterms becomes 0
+  while --nterms: 
     // Calc a new fraction and add to result
     top *= seed
     bot *= seed + 1d

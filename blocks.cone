@@ -6,7 +6,7 @@ fn main():
   // continue on a next line with indentation:
   mut c = a + b 
     - e + f
-  print <- c, "\n"  // => 52 // 17 without indenting 2nd line
+  print <- c, "\n"  // => 52 // result would be 17 without indenting 2nd line
 
   {
     mut result = 0

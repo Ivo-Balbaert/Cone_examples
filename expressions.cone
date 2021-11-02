@@ -20,7 +20,7 @@ fn main():
   // Swap the variable values for a and b
   mut a = 6
   mut b = 7
-  a,b = b,a
+  a, b = b, a
   print <- a, "\n"  // => 7
   print <- b, "\n"  // => 6
 
