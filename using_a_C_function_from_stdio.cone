@@ -1,0 +1,10 @@
+// Using an external C function (from stdio)
+// Compile with: conec test.cone
+// Link with: gcc stdio.o test.o -no-pie -o test
+// Execute with: ./test
+
+extern 
+  fn printInt(n i64)
+
+fn main():
+  printInt(42)
