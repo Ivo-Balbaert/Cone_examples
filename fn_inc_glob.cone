@@ -4,7 +4,7 @@ mut r = 9 // global variable
 
 fn main():  
   r = inc(r)
-  print <- r
+  print <- r, "\n"
 
 fn inc(n i32) i32:
   n + 1

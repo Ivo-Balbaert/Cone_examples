@@ -3,7 +3,7 @@ import stdio::*
 fn main():  
   mut r = 9
   r = inc(r)
-  print <- r
+  print <- r, "\n"
 
 fn inc(n i32) i32:
   n + 1

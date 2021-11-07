@@ -21,7 +21,7 @@ fn doEvent(ev Event):
     case imm k KeyEvent:
       print <- "Key pressed: ", k.char, "\n"
     case imm q QuitEvent:
-      print <- "All finished!"
+      print <- "All finished!", "\n"
 
 fn main():
   doEvent(MouseEvent[10u, 100, 200])

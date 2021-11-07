@@ -2,9 +2,9 @@
 // Compile with: conec test.cone
 // Link with: gcc stdio.o test.o -no-pie -o test
 // Execute with: ./test
-
-extern 
-  fn printInt(n i64)
+extern fn printInt(n i64)
+extern fn printChar(code u64)
 
 fn main():
   printInt(42)
+  printChar('\n')
