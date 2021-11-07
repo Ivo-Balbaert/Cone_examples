@@ -16,12 +16,12 @@ struct KeyEvent extends Event:
 
 fn doEvent(ev Event):
   match ev:
-    imm m MouseEvent:
+    case imm m MouseEvent:
       print <- "Mouse event at ", m.x, " ", m.y, "\n"
-    imm k KeyEvent:
+    case imm k KeyEvent:
       print <- "Key pressed: ", k.char, "\n"
-    imm q QuitEvent:
-      print <- "All finished!", "\n"
+    case imm q QuitEvent:
+      print <- "All finished!"
 
 fn main():
   doEvent(MouseEvent[10u, 100, 200])

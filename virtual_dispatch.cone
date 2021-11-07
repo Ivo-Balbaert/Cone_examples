@@ -32,8 +32,8 @@ fn doMath(shape &<Shape) f32, f32:
 
 // Demonstrate virtual dispatch on two different shapes
 fn main():
-  imm area = 0.
-  imm perim = 0.
+  mut area f32
+  mut perim f32
   imm circle = Circle[5.]
   area, perim = doMath(&circle)             // 78.5398, 31.4159      
   print <- area, " - ", perim, "\n"         // => 78.5398 - 31.4159   

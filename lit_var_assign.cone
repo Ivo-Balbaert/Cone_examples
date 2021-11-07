@@ -12,7 +12,10 @@ fn main():
 
   imm height f32 = 1.86   // f32 is optional, inferred from value
   print <- height, "\n"   // => 1.86
-  imm width  = height   // its value is 1.86 and type is f32
+  // height = 2.30   // <-- Error 1017: You do not have permission to modify lval
+  imm width  = height     // its value is 1.86 and type is f32
+  // length f32 = 1.86  // Error 1003: Statement finished? Expected semicolon or end of line.
+  // length = 1.86  // Error 1019: The name length does not refer to a declared name
   
   imm height2 f32
   height2 = 1.86
