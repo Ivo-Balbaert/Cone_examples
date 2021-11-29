@@ -1,0 +1,13 @@
+import stdio::*
+
+struct Area:
+  fn area(a i32) i32:
+    a * a
+
+  fn area(a i32, b i32) i32:
+    a * b
+
+fn main():
+  imm ar = Area[]
+  print <- ar.area(5), "\n"     // => 25
+  print <- ar.area(2, 3), "\n"  // => 6

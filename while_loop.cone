@@ -18,7 +18,7 @@ fn fact(mut n i32) i32:
     result *= n--
   result
 
-fn countOdd(n i32) i32:
+fn countOdd(mut n i32) i32:
   mut result = 0
   while n > 0:
     if n-- % 2 == 0: continue 

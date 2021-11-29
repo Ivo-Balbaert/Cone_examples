@@ -45,7 +45,7 @@ fn factorial(x i32, prod i32 = 1) i32:
     return prod 
   factorial(x-1, prod*x)
 
-fn factorial2(n i32) i32:
+fn factorial2(mut n i32) i32:
   if n <= 1:
     return 1 
   mut result = 1
