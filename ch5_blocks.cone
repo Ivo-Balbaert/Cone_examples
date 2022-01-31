@@ -1,0 +1,47 @@
+import stdio::*
+
+fn main():
+// Boundaries of a block are { }
+  {
+    mut a = 12
+    mut b = 5
+  }
+  mut a = 12; mut b = 5
+  // Nested block:
+  {
+    mut result = 0
+    {
+      mut sum = a + b
+      result = sum
+    }
+    ++result    
+    print <- result, "\n"  // => 18
+  }
+
+  // No blocks are defined with indentation! 
+  mut ai = 12; mut bi = 5
+    mut resulti = 0
+      mut sumi = ai + bi
+      resulti = sumi
+    print <- sumi, "\n"     // => 17
+    ++resulti    
+    print <- resulti, "\n"  // => 18
+  print <- resulti, "\n"    // => 18
+
+  // Block defined with : and indentation
+  mut c = 0
+  print <- c, "\n"        // => 0
+  if c == 0:
+    // inner block:
+    c = 12
+    mut n = 42
+  // Following statements are not part of if's inner block, since there is no indentation.     
+  print <- c, "\n"        // => 12
+  imm d = 5        
+
+  // Using a block as an expression
+  mut m = {
+    imm n = 3
+    6 + n     
+  }
+  print <- m, "\n" // => 9

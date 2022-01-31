@@ -1,0 +1,65 @@
+import stdio::*
+
+fn main():
+  print <- abs(7), "\n"   // => 7
+  print <- abs(-7), "\n"  // => 7
+  print <- abs(0), "\n"   // => 0
+
+  // Conditional expressions:
+  // an integer different from 0 is true, 0 is false
+  mut a = 0
+  if true: a += 1
+  if 42: a += 1     // not 42 == false
+  print <- a, "\n"  // => 2
+  if 3.14:   print <- "pi is true\n"  // => pi is true
+  mut n i32 = 42
+  if 'a': n++
+  print <- n, "\n"  // => 43
+
+  if a == 2:  
+    a++
+  // shorter:
+  // if a == 2:  a++
+  print <- a, "\n"  // => 3
+
+  if a > 0: 
+    a--
+    print <- a, "\n"  // => 2
+  
+  // condition is false:
+  if 0==3 or not 2<3 and 3==3: a++
+    print <- a, "\n"
+
+  // boolean expression:
+  imm p = 1
+  imm isOne = (p == 1)    // isOne is true
+  if isOne: print <- "Yes, p is 1!\n" // => Yes, p is 1!
+
+// if condition as an index to an array (in ch 7)
+  imm arr = [1, 5, 2, 8, 41, 79, 108]
+  imm x = 7
+  mut n2 = arr[if x == 0 {5u} else {6u}]
+  print <- n2, "\n"  // => 108
+
+  if { mut x = 3; x == 3 }:
+    print <- "This block returns true!" // => This block returns true!
+  
+  if { mut x = 3; x } == 3:
+    print <- "x is 3 allright!"  // => x is 3 allright!
+
+fn abs(x i32) i32:
+  mut result i32;
+  if x < 0:
+    result = -x
+  else:
+    result = x
+  result
+
+// Version 2:  if as expression and implicit return, multiple conditions:
+// fn abs(x i32) i32:
+//   if x < 0:
+//     -x
+//   elif x == 0:
+//     0
+//   else:
+//     x

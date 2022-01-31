@@ -1,9 +1,0 @@
-import stdio::*
-
-fn main():
-  mut idx = 0
-  mut maxidx = 10
-  imm found = loop:
-    if idx > maxidx: break -1 
-    ++idx
-  print <- found, "\n"  // => -1

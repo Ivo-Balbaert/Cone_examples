@@ -1,0 +1,16 @@
+import stdio::*
+
+fn main():
+  print <- 123, "\n"
+  print <- 3.14159, "\n"
+  print <- 1e6, "\n"          // => 1e+06
+  print <- -1_000_000, "\n"   // => -1000000 
+  print <- 0x1000, "\n"       // => 4096
+  print <- 1000u, "\n"     // => 1000
+
+  print <- "hello", "\n"       // => hello
+  print <- 'A', "\n"           // => 'A'
+  print <- true, "\n"          // => 1
+  print <- false, "\n"         // => 0
+  
+

@@ -1,0 +1,13 @@
+// Fibonacci
+import stdio::*
+
+fn main():
+  print <- "fib(10) is ", fib(10), "\n"  // => fib(10) is 89
+
+fn fib(mut n i64) i64:
+  mut prior i64 = 0
+  mut result i64 = 1
+  while n-- > 1:
+    prior, result = result, prior + result
+  result
+  

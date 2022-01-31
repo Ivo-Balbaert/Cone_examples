@@ -1,0 +1,21 @@
+import stdio::*
+
+fn main():
+  imm x = 7
+  imm ref1 = &imm x
+  mut ref3 = &imm x
+  // Cannot get a mutable reference to an immutable value
+  // imm ref2 = &mut x // Error 1034: Borrowed reference cannot obtain this permission
+  // mut ref4 = &mut x // Error 1034: Borrowed reference cannot obtain this permission
+
+  // Try to change reference:
+  mut z = 9
+  // Cannot get an immutable reference to a mutable value
+  // ref1 = &imm z   // Error 1034: Borrowed reference cannot obtain this permission
+  // ref3 = &imm z   // Error 1034: Borrowed reference cannot obtain this permission
+  
+  imm w = 10
+  // ILLEGAL! the ref1 variable cannot be changed - An immutable reference cannot be changed
+  // ref1 = &imm w   // Error 1034: Borrowed reference cannot obtain this permission
+  ref3 = &imm w   //  ref3 is mut, so this works!
+  print <- *ref3, "\n"  // => 10

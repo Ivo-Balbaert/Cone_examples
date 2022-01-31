@@ -1,0 +1,22 @@
+import stdio::*
+
+struct Point3:
+  x f32
+  y f32
+  z f32
+
+fn main():
+  imm nbrref0 = +so-imm 4
+  print <- *nbrref0, "\n" // => 4
+
+  imm nbrref = +rc-imm 4
+  print <- *nbrref, "\n" // => 4
+  imm nbrref2 = nbrref        // nbrref2 and nbrref point to same value
+  print <- *nbrref, "\n" // => 4
+
+  imm ref = +[]so [20_000_000; 25.]
+  ref[1] = 11.
+  each i in 0u < 10u:
+    print <- ref[i], " " // => 25 11 25 25 25 25 25 25 25 25
+  print <- "\n" 
+

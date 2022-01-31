@@ -1,0 +1,36 @@
+// Array references and slices
+import stdio::*
+
+fn main():
+  mut x = [1, 4, 5]   
+  arrayops(x)         // Perform operations on a copy of the array
+  // Coerce to array reference: another language primitive (ptr+len)
+  sliceops(&[] x)
+  sliceops_change(&[]mut x)
+
+// An array is a language primitive with a statically known size
+fn arrayops(mut array [3; i32]):
+  array[0] = array[2]     // Copy one element into another
+  each n in 0u < 3u:
+    imm r = &array[n]
+    print <- *r           // dereference
+  print <- "\n"
+
+// Slice is a borrowed array reference, a language primitive (ptr+len)
+fn sliceops(slice &[] i32):
+  each n in 0u < 3u:
+    imm r = &slice[n]
+    print <- *r
+  print <- "\n"
+
+fn sliceops_change(slice &[]mut i32):
+  each n in 0u < 3u:
+    mut r = &mut slice[n]
+    *r *= 2
+    print <- *r
+  print <- "\n"
+
+// =>
+// 545
+// 145
+// 2810

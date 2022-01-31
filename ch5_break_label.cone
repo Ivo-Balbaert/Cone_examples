@@ -1,0 +1,9 @@
+import stdio::*
+
+fn main():
+  mut n = 0
+  'outer: 
+    while n <= 7:
+      n++
+      if n == 5: break 'outer
+  print <- n  // => 5

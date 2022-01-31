@@ -1,0 +1,14 @@
+import stdio::*
+
+// struct Thing:
+//   name &[]u8 = "Ivo"
+//   color &[]u8  = "orange"
+
+struct Thing:
+  name = "Ivo"
+  color= "orange"
+
+fn main():
+  mut th = Thing[]
+  print <- th.name, "\n"  // => Ivo
+  print <- th.color, "\n" // => orange

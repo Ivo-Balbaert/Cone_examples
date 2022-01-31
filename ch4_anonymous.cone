@@ -1,0 +1,10 @@
+import stdio::*
+
+fn main():
+// calling an anonymous function:
+  imm times2 = &fn(x i32) i32 { 2*x }
+  print <- times2(3)
+
+  print <- (&fn(x i32) i32 { 2*x }) (3) // => 6
+
+  

@@ -1,0 +1,22 @@
+import stdio::*
+
+const ARRSIZE = 10usize
+
+fn main():
+  print <- ARRSIZE, "\n"  // => 10
+
+  imm height f32 = 1.86   // f32 is optional, inferred from value
+  print <- height, "\n"   // => 1.86
+  
+  // Initialization that follows declaration:
+  imm width f32
+  width = 3.14
+  print <- width, "\n"  // => 3.14
+
+  // Type inference:
+  imm length = 5   // i32 is optional, inferred from value
+  print <- length, "\n"   // => 5
+
+  // Copying values:
+  imm width2  = height     // width's value is 1.86 and type is f32
+  print <- width2, "\n"         // => 1.86

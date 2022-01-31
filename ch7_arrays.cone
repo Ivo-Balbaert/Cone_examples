@@ -1,0 +1,44 @@
+import stdio::*
+
+const ARRSIZE = 10usize
+
+fn main():
+  imm numbers [3; f32] = [3.1, 4.1, 5.92]
+  imm numbers2 = [3, 4, 5]   // type inference
+  mut arr = [1, 4, 5] 
+
+  mut nbr = 2
+  imm pair = [nbr * nbr, nbr + nbr]
+  imm hello = "Hello world!"  // type:  [12; u8] - a string is an array
+  imm spaces = [100; ' '] // fill initialization
+
+  imm x = [1, 2, 6][2]
+  print <- x // => 6
+
+  imm array = [ARRSIZE; 0]
+  each i in 0usize < ARRSIZE:
+    print <- array[i], " "  // => 0 0 0 0 0 0 0 0 0 0 
+  print <- "\n"
+    
+  refarr(5) // => 0 0 0 0 0
+  // indexing:
+  mut c_array = "coal"
+  print <- c_array[2], "\n"  // => a
+  c_array[2] = c_array[1]    // the 3rd element is now the same as the second
+  // c_array now holds the array value "cool"
+  print <- c_array[2], "\n"  // => o
+
+  // multi-dimensional arrays:
+  imm matrix [3; [3; f32]] = [[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]
+  imm val = matrix[1][1]  
+  print <- val  // => 1.
+  
+  mut numbers3 = [[3.1, 4.1, 5.92],[3.1, 4.1, 5.92],[3.1, 4.1, 5.92]]  // type is [3; [3; f32]]  
+  numbers3[2][2] = 17f
+  print <- numbers3[2][2] // => 17
+
+fn refarr(n usize):
+  imm refarray = +[]so [n; 0]  // region-allocated array
+  each i in 0usize < n:
+    print <- refarray[i], " " 
+ 

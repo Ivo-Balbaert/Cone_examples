@@ -1,0 +1,14 @@
+import stdio::*
+
+fn main():
+  mut idx = 0
+  mut maxidx = 10
+  imm found = loop:
+    if idx > maxidx: break -1
+    if matches(idx): break idx 
+    ++idx
+  print <- found, "\n"  // => 7
+
+fn matches(n i32) Bool:
+  if n == 7:  return true
+  false

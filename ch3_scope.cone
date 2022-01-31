@@ -1,0 +1,46 @@
+import stdio::*
+
+// Global scope:
+imm val1 = 42   
+mut val2 = 100  
+
+fn main():
+  print <- val1, "\n"   // => 42
+  // Local (to a function) scope
+  imm val3 = 9  
+  print <- val3, "\n"   // => 9
+  // mut val3 = 108  // Error 1011: Name is already defined. Only one allowed.
+
+  // Block scope:
+  {
+    mut a = 12
+    mut b = 5
+  }
+  // print <- a, "\n" // Error 1019: The name a does not refer to a declared name
+  imm a = 12; imm b = 5
+  {
+    mut result = 0
+    {
+      mut sum = a + b
+      result = sum
+    }
+    // sum cannot be referenced in outer block
+    // print <- sum, "\n" // Error 1019: The name sum does not refer to a declared name
+    ++result    
+    print <- result, "\n"  // => 18
+  }
+  // print <- result, "\n"  // => 18 // => Error 1019: The name result does not refer to a declared name
+
+  // Block scope with indentation:
+  mut c = 0
+  print <- c, "\n"        // => 0
+  if c == 0:
+    // inner block:
+    c = 12
+    mut n = 42
+    print <- n, "\n"      // => 42  
+    // end of inner block
+  imm d = 5        // Not part of if's inner block, since it is not indented.
+  print <- c, "\n"           // => 12
+  // print <- n, "\n"        // Error 1019: The name n does not refer to a declared name
+  

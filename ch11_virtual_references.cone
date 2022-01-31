@@ -1,0 +1,46 @@
+// Virtual references
+import stdio::*
+
+imm pi = 3.14159265
+
+// Define the rectangle shape
+struct Rectangle:
+  height f32
+  width f32
+  fn area(self &) f32:
+    height * width
+  fn perimeter(self &) f32:
+    2. * (height + width)
+
+// Define the Circle shape
+struct Circle:
+  r f32
+  fn area(self &) f32:
+    pi * r * r
+  fn perimeter(self &) f32:
+    2. * pi * r
+
+// Structurally define the Shape interface after-the-fact
+trait Shape:
+  fn area(self &) f32
+  fn perimeter(self &) f32
+
+// Using a Shape virtual reference &<, 
+// return the area and perimeter calculated using virtual dispatch
+fn doMath(shape &<Shape) f32, f32:
+  shape.area, shape.perimeter
+
+// Demonstrate virtual dispatch on two different shapes
+fn main():
+  mut area f32
+  mut perim f32
+  imm circle = Circle[5.]
+  area, perim = doMath(&circle)             // 78.5398, 31.4159      
+  print <- area, " - ", perim, "\n"         // => 78.5398 - 31.4159   
+  imm square = Rectangle[10., 10.]
+  area, perim = doMath(&square)             // 100, 40
+  print <- area, " - ", perim, "\n"         // => 100 - 40
+
+// =>
+// 78.5398 - 31.4159
+// 100 - 40

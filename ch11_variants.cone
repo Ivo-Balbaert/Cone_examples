@@ -1,0 +1,41 @@
+// Variant types and pattern matching
+// Doesn't work on Windows (Jan 17 2022):
+// Compile finished in 0.0103419 sec (301 kb). 0 warnings detected
+// C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: variants.obj:variants:(.text+0x1a): undefined reference to `__chkstk'
+// C:/msys/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: variants.obj:variants:(.text+0x7c): undefined reference to `__chkstk'
+// collect2.exe: error: ld returned 1 exit status 0
+import stdio::*
+
+trait @samesize Event:
+  _ enum
+  time u32
+
+struct QuitEvent extends Event:
+
+struct MouseEvent extends Event:
+  x i32
+  y i32
+
+struct KeyEvent extends Event:
+  char u8
+
+fn doEvent(ev Event):
+  match ev:
+    case imm m MouseEvent:
+      print <- "Mouse event at ", m.x, " ", m.y, "\n"
+    case imm k KeyEvent:
+      print <- "Key pressed: ", k.char, "\n"
+    case imm q QuitEvent:
+      print <- "All finished!", "\n"
+
+fn main():
+  doEvent(MouseEvent[10u, 100, 200])
+  doEvent(KeyEvent[20u, 'q'])
+  doEvent(MouseEvent[10u, 50, 600])
+  doEvent(QuitEvent[35u])
+
+// =>
+// Mouse event at 100 200
+// Key pressed: q
+// Mouse event at 50 600
+// All finished!

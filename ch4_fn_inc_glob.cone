@@ -1,0 +1,11 @@
+import stdio::*
+
+mut r = 9 // global variable
+
+fn main():  
+  r = inc(r)
+  print <- r, "\n"  // => 10
+
+fn inc(n i32) i32:
+  n + 1
+

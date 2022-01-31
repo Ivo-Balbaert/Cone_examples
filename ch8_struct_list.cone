@@ -1,0 +1,26 @@
+import stdio::*
+
+// Define a custom type that supports an array-like API
+struct List:
+  mut arr [4; i32]
+
+  fn `[]`(index usize) i32:
+    arr[index]
+
+  // fn `&[]`(self &mut, index usize) &mut i32:
+  //   &mut arr[index]
+
+  fn `&[]`(self &, index usize) &i32:
+    &arr[index]
+
+fn main():
+  listops()           // Demonstrate a custom type acting as an array-like collection
+
+fn listops():
+  mut list = List[arr: [1, 5, 2, 8]]
+  print <- list[2], " - "    // => 2
+  // imm r = &mut list.`&[]`(3)  // for the mut version
+  imm r = &list.`&[]`(3)
+  print <- *r, "\n"   // => 8
+
+// => 2 - 8

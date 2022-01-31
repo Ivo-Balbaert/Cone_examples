@@ -1,0 +1,8 @@
+import stdio::*
+
+typedef Array3int [3; i32]
+
+fn main():
+  imm nbrs Array3int = [1, 2, 3]  // doesn't work on global scope
+  each i in 0u < 3:
+     print <- nbrs[i], " "  // => 1 2 3

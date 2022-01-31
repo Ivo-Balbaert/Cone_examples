@@ -1,0 +1,9 @@
+import stdio::*
+include ch13_useme
+
+fn main():
+  imm a = 3
+  print <- timesnext(a), "\n"  // => 12
+
+fn timesnext(a i32) i32:
+  a * inc(a)  // uses a function defined by 'useme.cone'

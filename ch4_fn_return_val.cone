@@ -1,0 +1,11 @@
+import stdio::*
+
+imm hello = "Hello"
+
+fn main():
+  imm dessert = jello(hello)
+  print <- dessert  // => jello
+
+fn jello(mut saying [5; u8]) [5; u8]:
+  saying = "jello"
+  saying

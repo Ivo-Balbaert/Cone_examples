@@ -1,0 +1,11 @@
+// it doesn't matter whether inc comes before or after main
+import stdio::*
+
+fn inc(n i32) i32:
+  n + 1
+
+fn main():  
+  mut r = 9
+  r = inc(r)
+  print <- r, "\n"  // => 10
+

@@ -1,0 +1,18 @@
+import stdio::*
+
+extern:
+  fn clock() i64
+  fn rand() i64
+
+fn main():
+  mut r i64 = 0
+  each i in 0 < 10000:
+    each j in 0 < 1000:
+      r += i * j;
+
+  print <- "\n", clock(), "\n"  // => 4
+  // => 0   see: https://www.daniweb.com/programming/software-development/threads/120862/clock-always-returns-0
+
+  print <- rand(), "\n" // => 41
+  print <- rand(), "\n" // => 18467
+  print <- rand(), "\n" // => 6334

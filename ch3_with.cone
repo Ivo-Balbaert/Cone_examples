@@ -1,0 +1,21 @@
+import stdio::*
+
+struct Point:
+  x f64 = 0.
+  y f64 = 0.
+
+fn main():
+  imm pi = 3.14159
+  with pi/180:
+    // 'this' is the value of the expression after with
+    print <- this, "\n"  // => 0.0174533
+    imm quarter = 90f * this
+  
+  mut point = Point[3d, 0d]
+  // Normalize point to unit length
+  with &mut point:
+    imm len = (.x * .x + .y * .y).sqrt
+    if len > 0:
+      .x /= len
+      .y /= len
+ 

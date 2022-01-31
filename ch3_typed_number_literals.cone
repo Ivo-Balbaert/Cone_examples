@@ -1,0 +1,9 @@
+import stdio::*
+
+fn main():
+  print <- 65u8, "\n"     // => A - 8-bit unsigned integer
+  print <- 1f64, "\n"     // => 1 - 64-bit floating point number
+
+  print <- 1000u, "\n"    // => Ϩ  (should be 1000)
+  print <-1f, "\n"        // => 1
+  print <-1d, "\n"        // => 1

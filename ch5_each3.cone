@@ -1,0 +1,12 @@
+import stdio::*
+
+fn main():
+  each x in 6 > 1:    
+    print <- x, " - " // => 6 - 5 - 4 - 3 - 2 -
+  print <- "\n"
+
+  mut sum = 0
+  each x in 0 <= 10 by 2:
+    print <- x, ", "   // => 0, 2, 4, 6, 8, 10,    
+    sum += x
+  print <- "\n", sum   // => 30

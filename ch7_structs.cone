@@ -1,0 +1,20 @@
+// Demonstration of structs with methods
+import stdio::*
+
+struct Point:
+  x f64 = 0.    // optional default value
+  y f64 = 0.
+  
+fn main():
+  imm pt0 Point
+  // use suffix d for f64; if x's value is 3. then it is of type f32
+  pt0 = Point[x: 3d, y: 4d]  // struct constructor
+  mut pt1 = Point[3d, 0d]    // when field names are omitted, order matters.
+  mut pt2 = Point[0d, 4d]
+  imm pt3 = Point[]          // Uses x,y's declared default values of 0.
+  mut pt4 = Point[]   
+
+  print <- pt0.x, "\n"       // => 3
+  // pt0.y = 42d  // Error 1017: You do not have permission to modify lval, p0 is imm
+  pt4.y = 42d
+  print <- pt4.x, " ", pt4.y, "\n"  // => 0 42

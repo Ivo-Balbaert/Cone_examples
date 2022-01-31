@@ -1,0 +1,12 @@
+import stdio::*
+
+fn main():
+  imm val1 = max[i32](4, 6)      // => 6
+  imm val2 = max[f32](2.0, 5.0)  // => 5
+  print <- val1, "\n"
+  print <- val2, "\n"
+  imm val3 = max(42, 63)         // type inference of the type parameter T
+  print <- val3, "\n"            // => 63
+
+fn max[T](a T, b T) T:
+  if a > b {a} else {b}

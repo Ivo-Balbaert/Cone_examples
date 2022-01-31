@@ -1,0 +1,9 @@
+import stdio::*
+
+fn main():
+  imm ptr1 *i32   // Pointer to an integer
+  imm n = 7
+  imm ref1 = &n
+  imm ptr2 = ref1 as *i32  // This creates a copy of the reference
+  print <- *ptr2, "\n"  // => 7
+  

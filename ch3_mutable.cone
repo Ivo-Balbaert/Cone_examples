@@ -1,0 +1,12 @@
+import stdio::*
+
+fn main():
+  imm height f32 = 1.86   // f32 is optional, inferred from value
+  print <- height, "\n"   // => 1.86
+  // height = 2.30   // <-- Error 1017: You do not have permission to modify lval
+
+  mut age = 23      // type is i32
+  // ... some statements here ...
+  age = 24          // alters age to hold 24 instead
+  // age = 24.0           // Error 1013: Expression's type does not match lval's type
+  print <- age, "\n"  // => 24

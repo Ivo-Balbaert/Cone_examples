@@ -1,0 +1,11 @@
+import stdio::*
+
+fn main():
+  imm lim = 10
+  print <- sum(lim), "\n"    // => 55
+
+fn sum(lim i32) i32:
+  mut sum = 0
+  each i in 1 <= lim:
+    sum += i
+  sum
