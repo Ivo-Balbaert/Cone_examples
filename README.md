@@ -16,7 +16,7 @@ They are more or less divided by chapter (prefix chn):
 - ch12 - Typedef - Macros - Metaprogramming
 - ch13 - Modules - Namespaces
 
-(Cone version: 2022 Jan 29  - v 0.1.0)
+(Cone version: 2022 Jan 30  - v 0.1.0)
 TBI = To Be Implemented
 
 The script compexec_all.sh can be used to compile and execute all programs.
