@@ -3,6 +3,7 @@ This repo contains a collection of working [Cone](https://cone.jondgoodwin.com/)
 They are mainly extracted from the Cone [Reference](https://cone.jondgoodwin.com/coneref/index.html) and [PlayGround](https://cone.jondgoodwin.com/play/index.html), adding others and new variations.
 
 They are more or less divided by chapter (prefix chn):
+(TBI = To Be Implemented)
 - ch2 - Installation-Compiler-Dev environment
 - ch3 - Basics
 - ch4 - Functions
@@ -16,8 +17,9 @@ They are more or less divided by chapter (prefix chn):
 - ch12 - Typedef - Macros - Metaprogramming
 - ch13 - Modules - Namespaces
 
+All examples where compiled and tested on Windows 11 / Ubuntu 20.
 (Cone version: 2022 Jan 30  - v 0.1.0)
-TBI = To Be Implemented
+
 
 The script compexec_all.sh can be used to compile and execute all programs.
 
