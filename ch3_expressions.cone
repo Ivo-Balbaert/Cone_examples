@@ -48,7 +48,7 @@ fn main():
 
   // boolean expression:
   imm p = 1
-  imm isOne = (p == 1)    // isOne is true
+  imm isOne = (p == 1)    // isOne has value true
   
   mut flags = 0xC0u
   flags |= 0x01u                // 0xC1u
