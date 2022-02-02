@@ -1,0 +1,12 @@
+import stdio::*
+
+fn main():
+  print <- "Hello world!\n"
+  print <- "Bonjour tout le monde!\n"
+  print <- "Hallo Wereld!\n"
+  print <- "¡Hola, mundo!\n"
+  print <- "Καλημέρα κόσμε!\n"
+  print <- "こんにちは 世界!\n" 
+  print <- "!ہیلو ، دنیا\n"
+  print <- "ສະ​ບາຍ​ດີ​ຊາວ​ໂລກ\n"
+  print <- "👋🌍❗\n"

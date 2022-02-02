@@ -1,5 +1,5 @@
 import stdio::*
-import ch13_submod::*
+import submod::*
 
 fn main():
   imm n = 6

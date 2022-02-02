@@ -58,10 +58,13 @@ fn factorial(x i32, prod i32 = 1) i32:
 fn factorial2(mut n i32) i32:
   mut result = 1
   if n <= 1:
-    result 
-  while n > 1:
+    result
+  // while n > 1:
+  //   result *= n
+  //   n--
+  // shorter version:
+  while n-- > 1:
     result *= n
-    n--
   result
 
 fn incr(x i32) i32 inline:

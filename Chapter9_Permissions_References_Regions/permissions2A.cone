@@ -18,4 +18,4 @@ fn main():
   // ILLEGAL! the ref1 variable cannot be changed - An immutable reference cannot be changed
   // ref1 = &imm w   // Error 1034: Borrowed reference cannot obtain this permission
   ref3 = &imm w   //  ref3 is mut, so this works!
-  print <- *ref3, "\n"  // => 10
+  print <- *ref3  // => 10

@@ -1,5 +1,5 @@
 import stdio::*
-include ch13_useme
+include useme
 
 fn main():
   imm a = 3

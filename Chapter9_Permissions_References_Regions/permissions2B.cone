@@ -8,10 +8,8 @@ fn main():
   imm ref2 = &mut x
   // mut ref3 = &imm x  // Error 1034: Borrowed reference cannot obtain this permission
   mut ref4 = &mut x
-  print <- *ref4,"\n" // => 7
   
   // Try to change reference:
   mut z = 9
   // ref2 = &mut x // Error 1017: You do not have permission to modify lval
   ref4 = &mut x
-  print <- *ref4,"\n" // => 7
