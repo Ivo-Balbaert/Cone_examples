@@ -2,7 +2,7 @@ This repo contains a collection of working [Cone](https://cone.jondgoodwin.com/)
 
 They are mainly extracted from the Cone [Reference](https://cone.jondgoodwin.com/coneref/index.html) and [PlayGround](https://cone.jondgoodwin.com/play/index.html), adding others and new variations.
 
-They are more or less divided by chapter (prefix chn):
+They are divided by chapter:
 (TBI = To Be Implemented)
 - ch2 - Installation-Compiler-Dev environment
 - ch3 - Basics
