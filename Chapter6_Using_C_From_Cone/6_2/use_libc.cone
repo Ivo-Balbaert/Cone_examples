@@ -2,4 +2,10 @@ import stdio::*
 import libc
 
 fn main():
-    print <- libc::clock()  // => 
+ print <- "\n", libc::clock(), "\n"  // => 0
+  // => 0   see: https://www.daniweb.com/programming/software-development/threads/120862/clock-always-returns-0    print <- libc::clock()  // => 
+  mut r i64 = 0
+  each i in 0 < 10000:
+    each j in 0 < 1000:
+      r += i * j;
+  print <- "\n", libc::clock(), "\n"  // => 6

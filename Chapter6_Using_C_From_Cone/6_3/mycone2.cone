@@ -1,0 +1,6 @@
+import stdio::*
+include externC
+
+fn main():
+    print <- "\n", my_add_int(3,8), "\n"              // => 11
+    print <- "\n", my_add_double(38.3d,83.5d), "\n"   // => 121.8
