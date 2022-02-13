@@ -6,10 +6,10 @@ struct Point3:
   z f32
 
 fn main():
-  imm nbrref0 = +so-imm 4
+  imm nbrref0 = +so-imm 4 // single-owner region (so)
   print <- *nbrref0, "\n" // => 4
 
-  imm nbrref = +rc-imm 4
+  imm nbrref = +rc-imm 4 // reference-counting region (rc)
   print <- *nbrref, "\n" // => 4
   imm nbrref2 = nbrref        // nbrref2 and nbrref point to same value
   print <- *nbrref, "\n" // => 4

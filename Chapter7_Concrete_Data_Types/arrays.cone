@@ -4,7 +4,7 @@ const ARRSIZE = 10usize
 
 fn main():
   imm numbers [3; f32] = [3.1, 4.1, 5.92]
-  imm numbers2 = [3, 4, 5]   // type inference
+  imm numbers2 = [3, 4, 5]   // type inference to type [3; i32]
   mut arr = [1, 4, 5] 
 
   mut nbr = 2
@@ -21,6 +21,7 @@ fn main():
   print <- "\n"
     
   refarr(5) // => 0 0 0 0 0
+  
   // indexing:
   mut c_array = "coal"
   print <- c_array[2], "\n"  // => a

@@ -4,7 +4,7 @@ fn main():
   mut a i32
   mut b i32
   a, b = ordered(4, 1) // capture multiple returned values
-  print <- a, " < ", b, "\n"    // =>  1 < 4
+  print <- a, " <= ", b, "\n"    // =>  1 < 4
 
 // Return two integers in ordered sequence
 fn ordered(mut m i32, mut n i32) i32, i32:

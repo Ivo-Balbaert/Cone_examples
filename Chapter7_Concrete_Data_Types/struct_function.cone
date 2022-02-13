@@ -6,9 +6,9 @@ struct Point:
 
 fn main():
   mut pt1 = Point[]
-  pt1 = change(pt1)
+  pt1 = change(pt1) // passed by copy
   print <- pt1.x, " ", pt1.y, "\n"  // => 1 2
 
-fn change(mut pt Point) Point:
+fn change(mut pt Point) Point: // pt is a copy of pt1
   pt = Point[1., 2.]
   pt

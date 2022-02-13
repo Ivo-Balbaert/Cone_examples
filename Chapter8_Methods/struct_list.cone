@@ -7,6 +7,9 @@ struct List:
   fn `[]`(index usize) i32:
     arr[index]
 
+  fn `[]=`(mut self, index usize, n i32) i32:
+    arr[index] = n
+
   // fn `&[]`(self &mut, index usize) &mut i32:
   //   &mut arr[index]
 
@@ -20,7 +23,13 @@ fn listops():
   mut list = List[arr: [1, 5, 2, 8]]
   print <- list[2], " - "    // => 2
   // imm r = &mut list.`&[]`(3)  // for the mut version
-  imm r = &list.`&[]`(3)
-  print <- *r, "\n"   // => 8
+  // imm r = &list.`&[]`(3) // works, but following is shorter:
+  imm r = &list[3]
+  print <- *r, " - "   // => 8
+  // list[2] = 3 // doesn't work
+  // Error 1016: Expression must be lval
+  // -->   list[2] = 3
+  list.arr[2] = 3
+  print <- list[2], " - "    // => 3  // works because of method `[]`
 
-// => 2 - 8
+// => 2 - 8 - 3

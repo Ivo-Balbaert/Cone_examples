@@ -1,0 +1,13 @@
+import stdio::*
+
+struct Matrix:
+    mut arr [4; f32]
+    fn `[]`(n usize) f32, Bool:
+      if n < 4:
+        arr[n], true
+      else:
+        0f, false
+
+fn main():
+  imm m1 = Matrix[arr: [3.1, 4.1, 5.92, 6.4]]
+  print <- m1.arr[2]  // => 5.92

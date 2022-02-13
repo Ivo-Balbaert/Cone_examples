@@ -5,5 +5,4 @@ const n = 42
 fn main():
   print <- n, "\n" // => 42
   // n = 108  // Error 1017: You do not have permission to modify lval
-  // opaq q = 7  // Error 1013: Permission not valid for variable/field declaratio
-  // uni a = 1   // Error 1013: Permission not valid for variable/field declaration
+  

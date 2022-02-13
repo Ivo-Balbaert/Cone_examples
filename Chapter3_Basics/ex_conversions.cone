@@ -1,0 +1,14 @@
+import stdio::*
+
+fn main():
+  // imm x u8 = 1
+  // imm y i8 = -2
+  // print <- x + y
+
+// Error 1042: No matching method '+' found that matches the call's arguments.
+//  -->   print <- x + y
+
+// Correction:
+  imm x u8 = 1
+  imm y i8 = -2
+  print <- i8[x] + y   // => -1

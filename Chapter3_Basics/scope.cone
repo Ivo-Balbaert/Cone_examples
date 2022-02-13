@@ -2,14 +2,17 @@ import stdio::*
 
 // Global scope:
 imm val1 = 42   
-mut val2 = 100  
+mut val2 = 100
+mut val3 i32
 
 fn main():
   print <- val1, "\n"   // => 42
+  // val3 = 108
+  print <- val3, "\n"   // => 0  // uses zero initializer
   // Local (to a function) scope
-  imm val3 = 9  
-  print <- val3, "\n"   // => 9
-  // mut val3 = 108  // Error 1011: Name is already defined. Only one allowed.
+  imm val4 = 9  
+  print <- val4, "\n"   // => 9
+  // mut val4 = 108  // Error 1011: Name is already defined. Only one allowed.
 
   // Block scope:
   {

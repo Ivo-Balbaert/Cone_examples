@@ -5,8 +5,8 @@ import stdio::*
 //   color &[]u8  = "orange"
 
 struct Thing:
-  name = "Ivo"
-  color= "orange"
+  name  = "Ivo"
+  color = "orange"
 
 fn main():
   mut th = Thing[]

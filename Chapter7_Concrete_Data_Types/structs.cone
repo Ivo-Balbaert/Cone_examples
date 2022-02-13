@@ -1,6 +1,10 @@
 // Demonstration of structs with methods
 import stdio::*
 
+// struct Point:
+//   x f64
+//   y f64
+
 struct Point:
   x f64 = 0.    // optional default value
   y f64 = 0.
