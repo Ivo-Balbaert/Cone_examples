@@ -6,19 +6,18 @@
 // collect2.exe: error: ld returned 1 exit status 0
 import stdio::*
 
-trait @samesize Event:
-  _ enum
+union Event:
   time u32
 
-struct QuitEvent extends Event:
+  struct QuitEvent:
 
-struct MouseEvent extends Event:
-  x i32
-  y i32
+  struct MouseEvent:
+    x i32
+    y i32
 
-struct KeyEvent extends Event:
-  char u8
-
+  struct KeyEvent:
+    char u8
+    
 fn doEvent(ev Event):
   match ev:
     case imm m MouseEvent:
